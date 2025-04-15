@@ -3,64 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suscripción</title>
+  <title>BigBite Cookies - Suscríbete</title>
   <style>
-    /* Estilos generales */
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #a8e063, #56ab2f); /* Tonos naturales */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
     }
 
-    /* Contenedor con efecto Glassmorphism */
+    header {
+      background-color: #fff3e6;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #d2691e;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #d2691e;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #a0522d;
+    }
+
     .container {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 20px;
-      width: 100%;
-      max-width: 400px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      padding: 30px;
+      max-width: 450px;
+      margin: 50px auto;
       text-align: center;
     }
 
-    /* Estilos del formulario */
+    .container h2 {
+      color: #a0522d;
+      margin-bottom: 20px;
+    }
+
     input {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin: 10px 0;
-      border: none;
-      border-radius: 5px;
+      border: 2px solid #f8b500;
+      border-radius: 10px;
+      font-size: 16px;
     }
 
     button {
-      background-color: #4CAF50;
+      background-color: #f8b500;
       color: white;
       border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color: #e09e00;
     }
 
-    /* Mensaje de confirmación */
     #mensaje {
       margin-top: 15px;
-      color: white;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff3e6;
+      color: #a0522d;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+
+    .cookie-img {
+      width: 80px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <h1>🍪 BigBite Cookies</h1>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Sabores</a>
+      <a href="#">Promociones</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </header>
+
   <div class="container">
-    <h2>Suscríbete</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="cookie" class="cookie-img">
+    <h2>Suscríbete al Newsletter</h2>
+    <p>Recibe promos, sabores nuevos y más sorpresas dulces 🎉</p>
     <form id="formulario">
       <input type="text" id="nombre" placeholder="Tu nombre" required>
       <input type="email" id="email" placeholder="Tu correo electrónico" required>
@@ -68,42 +120,32 @@
     </form>
     <p id="mensaje"></p>
     <div class="hs-form-frame" data-region="eu1" data-form-id="ca4a2abe-b641-4516-81b4-f8d9a41c9d23" data-portal-id="145992938"></div>
-
   </div>
+
+  <footer>
+    © 2025 BigBite Cookies 🍪 | Hecho con amor y chocolate en CDMX
+  </footer>
 
   <script>
     document.getElementById('formulario').addEventListener('submit', function(event) {
       event.preventDefault();
-      
-      // Obtener valores de los campos
+
       const nombre = document.getElementById('nombre').value.trim();
       const email = document.getElementById('email').value.trim();
       const mensaje = document.getElementById('mensaje');
 
-      // Validación básica del correo electrónico
-      const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const regexEmail = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
       if (!regexEmail.test(email)) {
         mensaje.textContent = 'Por favor, introduce un correo electrónico válido.';
         mensaje.style.color = 'red';
         return;
       }
 
-      // Aquí puedes añadir el código para enviar los datos a tu CRM
-
-      // Mostrar mensaje de confirmación
       mensaje.textContent = '¡Gracias por suscribirte!';
-      mensaje.style.color = 'white';
-
-      // Limpiar el formulario
+      mensaje.style.color = '#2e7d32';
       document.getElementById('formulario').reset();
     });
   </script>
   <script src="https://js-eu1.hsforms.net/forms/embed/145992938.js" defer></script>
-  //http://145992938.hs-sites-eu1.com/home
-
- 
 </body>
-<footer>
-<script src="https://js-eu1.hsforms.net/forms/embed/145992938.js" defer></script>
-</footer>
 </html>
